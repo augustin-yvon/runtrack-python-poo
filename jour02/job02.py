@@ -18,13 +18,3 @@ class Livre:
             self.nbr_pages = new_nbr_pages
         else:
             print('Entrez un nombre entier')
-    
-livre1 = Livre('Harry Potter', 'JK Rooling', 900)
-livre1.afficher()
-print('')
-livre1.modifier_nbr_pages(15.5)
-print('')
-livre1.modifier_nbr_pages(175)
-livre1.modifier_auteur('John Steinbeck')
-livre1.modifier_titre('Mice and Men')
-livre1.afficher()

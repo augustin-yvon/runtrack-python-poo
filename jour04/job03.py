@@ -22,20 +22,28 @@ class Rectangle:
         self.__largeur = largeur
 
     def afficher(self):
-        rectangle = ' '
+        rectangle = ''
         for i in range(self.__longueur):
-            rectangle += '__'
+            if i == 0:
+                rectangle += "╭──"
+            elif i == self.__longueur -1:
+                rectangle += "──╮"
+            else:
+                rectangle += '──'
         rectangle += ' '
         for i in range(self.__largeur):
-            rectangle += '\n|'
+            rectangle += '\n┃'
             for j in range(self.__longueur):
-                if i == self.__largeur-1:
-                    for k in range(self.__longueur):
-                        rectangle += '__'
-                    rectangle += '|'
-                    return rectangle
                 rectangle += '  '
-            rectangle += '|'
+            rectangle += '┃'
+        rectangle += '\n'
+        for i in range(self.__longueur):
+            if i == 0:
+                rectangle += "╰──"
+            elif i == self.__longueur -1:
+                rectangle += "──╯"
+            else:
+                rectangle += '──'
         return rectangle
 
 class Parallelepipede(Rectangle):
@@ -45,7 +53,7 @@ class Parallelepipede(Rectangle):
 
     def volume(self):
         return self.surface() * self.__hauteur
-    
+
 
 rectangle = Rectangle(10, 5)
 print(rectangle.afficher())

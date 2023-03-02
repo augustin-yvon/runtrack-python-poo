@@ -2,9 +2,7 @@ from job02 import Livre
 
 class Livre(Livre):
     def __init__(self, titre, auteur, nbr_pages, disponible = True):
-        self.titre = titre
-        self.auteur = auteur
-        self.nbr_pages = nbr_pages
+        super().__init__(titre, auteur, nbr_pages)
         self.disponible = disponible
 
     def verification(self):
